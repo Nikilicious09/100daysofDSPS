@@ -1,5 +1,3 @@
-// Two number sum
-
 class TwoNumberSum {
     
     func twoNumberSum(inputArr: [Int], targetSum: Int) -> [Int] {
