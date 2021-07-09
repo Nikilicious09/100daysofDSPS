@@ -10,17 +10,19 @@ class NonConstrictableChange {
     
     func findnonConstrictableChange(inputArr: [Int]) -> Int {
         
-        for input in inputArr {
-            missingElements[input] = true
-            
-            
+        var currentChange = 0
+        for coin in inputArr {
+            if coin > currentChange + 1 {
+                return currentChange + 1
+            }
+            currentChange += coin
         }
         
-        
-        return 1
+        return currentChange + 1
     }
     
 }
 
 let program = NonConstrictableChange()
-program.findnonConstrictableChange(inputArr: [1, 2, 3, 3, 5])
+program.findnonConstrictableChange(inputArr: [1, 2, 5])
+program.findnonConstrictableChange(inputArr: [1, 2, 3, 5, 7, 9])
